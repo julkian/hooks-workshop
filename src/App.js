@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import UseStateSection from "./components/useStateSection/useStateSection";
+import UseEffectSection from "./components/useEffectSection/useEffectSection";
+import UseContextSection from "./components/useContextSection/useContextSection";
+import UseReducerSection from "./components/useReducerSection/useReducerSection";
+import UseCallbackSection from "./components/useCallbackSection/useCallbackSection";
+import UseMemoSection from "./components/useMemoSection/UseMemoSection";
+
+export const BagContext = React.createContext();
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BagContext.Provider
+      value={{
+        pokeball:
+          "http://www.pngall.com/wp-content/uploads/4/Pokeball-PNG-HD-Image.png",
+      }}
+    >
+      <div className="App">
+        <header className="App-header">HOOKS WORKSHOP</header>
+        <UseStateSection />
+        <UseEffectSection />
+        <UseContextSection />
+        <UseReducerSection />
+        <UseCallbackSection />
+        <UseMemoSection />
+      </div>
+    </BagContext.Provider>
   );
 }
 

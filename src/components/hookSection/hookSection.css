@@ -1,0 +1,18 @@
+.Hook-section {
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: solid 1px #434852;
+  padding: 1em;
+  margin: 1em;
+}
+
+.Hook-header {
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+.Hook-content {
+  padding-left: 1em;
+}
