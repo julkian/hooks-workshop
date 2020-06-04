@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useCallback, useState } from "react";
 import HookSection from "../hookSection/hookSection";
 
@@ -19,10 +18,16 @@ function UseCallbackSection() {
       <p>Pokedex index: {pokemonNumber}</p>
       <img alt="Charmander evolving" src={getMyPokemonPicture()} />
       <div className="Use-state-buttons">
-        <button onClick={() => setPokemonNumber(pokemonNumber - 1 || 1)}>
+        <button
+          disabled={pokemonNumber === 1}
+          onClick={() => setPokemonNumber(pokemonNumber - 1)}
+        >
           prev
         </button>
-        <button onClick={() => setPokemonNumber(pokemonNumber + 1)}>
+        <button
+          disabled={pokemonNumber === 151}
+          onClick={() => setPokemonNumber(pokemonNumber + 1)}
+        >
           next
         </button>
       </div>

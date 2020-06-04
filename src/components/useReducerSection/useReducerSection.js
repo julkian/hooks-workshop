@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useReducer } from "react";
 import HookSection from "../hookSection/hookSection";
 
 const initialState = {
@@ -71,10 +71,7 @@ const pokemonTrainerReducer = (state, action) => {
 };
 
 function UseReducerSection() {
-  const [state, dispatch] = React.useReducer(
-    pokemonTrainerReducer,
-    initialState
-  );
+  const [state, dispatch] = useReducer(pokemonTrainerReducer, initialState);
   return (
     <HookSection
       title="Safari Zone!"

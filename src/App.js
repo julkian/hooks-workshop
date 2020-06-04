@@ -1,13 +1,13 @@
-import React from "react";
+import React, { createContext } from "react";
 import "./App.css";
 import UseStateSection from "./components/useStateSection/useStateSection";
 import UseEffectSection from "./components/useEffectSection/useEffectSection";
 import UseContextSection from "./components/useContextSection/useContextSection";
 import UseReducerSection from "./components/useReducerSection/useReducerSection";
 import UseCallbackSection from "./components/useCallbackSection/useCallbackSection";
-import UseMemoSection from "./components/useMemoSection/UseMemoSection";
+import UseMemoSection from "./components/useMemoSection/useMemoSection";
 
-export const BagContext = React.createContext();
+export const BagContext = createContext();
 
 function App() {
   return (

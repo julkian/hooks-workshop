@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import HookSection from "../hookSection/hookSection";
 import { BagContext } from "../../App";
 
 function UseContextSection() {
-  const pokeball = React.useContext(BagContext).pokeball;
+  const pokeball = useContext(BagContext).pokeball;
   return (
     <HookSection
       title="Where did I put my pokeball?"
