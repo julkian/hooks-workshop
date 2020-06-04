@@ -1,32 +1,33 @@
 import React, { useCallback, useState } from "react";
 import HookSection from "../hookSection/hookSection";
 
-const getMyPokemon = (pkmNumber) =>
+const searchInPokedex = (pkmNumber) =>
   `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pkmNumber}.png`;
 
 function UseCallbackSection() {
-  const [pokemonNumber, setPokemonNumber] = useState(4);
-  const getMyPokemonPicture = useCallback(() => getMyPokemon(pokemonNumber), [
-    pokemonNumber,
-  ]);
+  const [pokedexIndex, setPokedexIndex] = useState(4);
+  const getMyPokemonPicture = useCallback(
+    () => searchInPokedex(pokedexIndex),
+    []
+  );
 
   return (
     <HookSection
-      title="Pokedex"
-      url="https://reactjs.org/docs/hooks-reference.html#usestate"
+      title="Pokédex callback"
+      url="https://reactjs.org/docs/hooks-reference.html#usecallback"
     >
-      <p>Pokedex index: {pokemonNumber}</p>
-      <img alt="Charmander evolving" src={getMyPokemonPicture()} />
+      <p>Pokedex index: {pokedexIndex}</p>
+      <img alt="My pokédex" src={getMyPokemonPicture()} />
       <div className="Use-state-buttons">
         <button
-          disabled={pokemonNumber === 1}
-          onClick={() => setPokemonNumber(pokemonNumber - 1)}
+          disabled={pokedexIndex === 1}
+          onClick={() => setPokedexIndex(pokedexIndex - 1)}
         >
           prev
         </button>
         <button
-          disabled={pokemonNumber === 151}
-          onClick={() => setPokemonNumber(pokemonNumber + 1)}
+          disabled={pokedexIndex === 151}
+          onClick={() => setPokedexIndex(pokedexIndex + 1)}
         >
           next
         </button>
